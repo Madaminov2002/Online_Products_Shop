@@ -1,0 +1,17 @@
+spring:
+  config:
+    name: Online_Products_Shop
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/online_products_shop
+    username: postgres
+    password: Suhrob1332
+    driverClassName: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+  liquibase:
+    change-log: classpath:db/changelog/changelogMaster.xml
+server:
+  port: 8081
