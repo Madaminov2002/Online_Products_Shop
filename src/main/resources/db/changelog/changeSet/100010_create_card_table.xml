@@ -7,8 +7,8 @@
         <sql dbms="postgresql" >
             CREATE TABLE card (
                                   id BIGSERIAL PRIMARY KEY,
-                                  number VARCHAR(255),
-                                  sum DOUBLE PRECISION,
+                                  number VARCHAR(255) UNIQUE NOT NULL ,
+                                  sum DECIMAL NOT NULL ,
                                   user_id BIGINT REFERENCES users (id)
             );
 
