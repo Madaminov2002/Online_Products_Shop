@@ -1,7 +1,19 @@
 spring:
   config:
     name: Online_Products_Shop
-
+  mail:
+    host: "sandbox.smtp.mailtrap.io"
+    port: 2525
+    ssl: no
+    tls: yes
+    username: "b24561548e534e"
+    password: "c3e600686fd7ef"
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
   datasource:
     url: jdbc:postgresql://localhost:5432/online_products_shop
     username: postgres
@@ -15,3 +27,5 @@ spring:
     change-log: classpath:db/changelog/changelogMaster.xml
 server:
   port: 8081
+secret:
+  key: ApeVFjUOyTmk7XYwgcYwIEsix1mALAsQhftYQqWHE8P6kcnqbZv0Uxj9HduKEvjXzz0sVYCG0ZjSBtmxadtAiQ==
