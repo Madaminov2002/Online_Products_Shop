@@ -29,3 +29,7 @@ server:
   port: 8081
 secret:
   key: ApeVFjUOyTmk7XYwgcYwIEsix1mALAsQhftYQqWHE8P6kcnqbZv0Uxj9HduKEvjXzz0sVYCG0ZjSBtmxadtAiQ==
+springdoc:
+  swagger-ui:
+    enabled: true
+    path: /swagger

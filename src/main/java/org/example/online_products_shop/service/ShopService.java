@@ -26,7 +26,9 @@ public class ShopService {
         if (district.isEmpty()) {
             throw new DistrictNotFoundException(String.valueOf(shopDto.getDistrictId()));
         }
-
+        /**
+         * Only users with admin role will be attached to the shop
+         */
         Optional<User> adminById = userRepository.findAdminById(shopDto.getAdminId());
 
         if (adminById.isEmpty()) {
