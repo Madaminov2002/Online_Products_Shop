@@ -10,5 +10,4 @@ import lombok.Setter;
 @Builder
 public class CardDto {
     private String cardNumber;
-    private BigDecimal sum;
 }

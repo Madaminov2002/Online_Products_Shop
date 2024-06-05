@@ -1,5 +1,7 @@
 package org.example.online_products_shop.service;
 
+import java.math.BigDecimal;
+import java.util.Random;
 import lombok.RequiredArgsConstructor;
 import org.example.online_products_shop.domain.Card;
 import org.example.online_products_shop.domain.User;
@@ -16,11 +18,16 @@ public class CardService {
     private final UserRepository userRepository;
 
     public Card dtoToEntity(CardDto cardDto) {
+        /**
+         * temporarily adding money to the card
+         */
+        double sum = new Random().nextDouble(10.00,1000.00);
+
         String email = SecurityContextHolder.getContext().getAuthentication().getName();
         User user = userRepository.findByEmail(email);
         return Card.builder()
                 .number(cardDto.getCardNumber())
-                .sum(cardDto.getSum())
+                .sum(BigDecimal.valueOf(sum))
                 .user(user)
                 .build();
     }

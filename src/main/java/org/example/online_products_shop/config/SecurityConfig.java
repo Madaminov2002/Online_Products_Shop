@@ -33,7 +33,11 @@ public class SecurityConfig {
             "/auth/login",
             "/auth/signup",
             "/auth/check_ForgotPassword",
-            "/auth/change-password"
+            "/auth/change-password",
+            "/swagger-ui.html",
+            "/swagger-ui/**",
+            "/v3/api-docs/**",
+            "/swagger-resources/**"
     };
 
 

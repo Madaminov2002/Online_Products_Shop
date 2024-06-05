@@ -1,5 +1,7 @@
 package org.example.online_products_shop.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.example.online_products_shop.domain.Shop;
 import org.example.online_products_shop.dto.ShopDto;
@@ -14,11 +16,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/shop")
 @RequiredArgsConstructor
+@Tag(
+        name = "Shop API",
+        description = "Designed to manage of shop"
+)
 public class ShopController {
     private final ShopService shopService;
 
     @PostMapping("/save")
     @PreAuthorize("hasRole('SUPER ADMIN')")
+    @Operation(summary = "Save Shop", description = "Super admin adds all shops in the city along with shop admins")
     public ResponseEntity<Shop> save(@RequestBody ShopDto shopDto) {
         return ResponseEntity.ok(shopService.save(shopDto));
     }
