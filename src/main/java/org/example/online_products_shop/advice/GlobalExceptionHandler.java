@@ -1,12 +1,13 @@
 package org.example.online_products_shop.advice;
 
 import jakarta.servlet.http.HttpServletResponse;
-import org.example.online_products_shop.dto.AdminNotFoundException;
+import org.example.online_products_shop.exception.AdminNotFoundException;
 import org.example.online_products_shop.dto.ErrorResponseDto;
 import org.example.online_products_shop.exception.AvailableProductNotFoundException;
 import org.example.online_products_shop.exception.DistrictNotFoundException;
 import org.example.online_products_shop.exception.EmailAlreadyExistsException;
 import org.example.online_products_shop.exception.EmailNotFoundException;
+import org.example.online_products_shop.exception.IsNotEnoughMoneyException;
 import org.example.online_products_shop.exception.NoAuthorityException;
 import org.example.online_products_shop.exception.PasswordIncorrectException;
 import org.example.online_products_shop.exception.ProductNotFoundException;
@@ -141,5 +142,9 @@ public class GlobalExceptionHandler {
         );
     }
 
+    @ExceptionHandler(IsNotEnoughMoneyException.class)
+    public ResponseEntity<String> isNotEnough(IsNotEnoughMoneyException exception) {
+        return ResponseEntity.ok(exception.getMessage());
+    }
 
 }
