@@ -14,6 +14,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.example.online_products_shop.auditing.Auditor;
 
 @Builder
 @Getter
@@ -22,7 +23,7 @@ import lombok.Setter;
 @Table(name = "users")
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class User extends Auditor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
