@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.example.online_products_shop.domain.District;
 import org.example.online_products_shop.domain.Shop;
 import org.example.online_products_shop.domain.User;
-import org.example.online_products_shop.dto.AdminNotFoundException;
+import org.example.online_products_shop.exception.AdminNotFoundException;
 import org.example.online_products_shop.dto.ShopDto;
 import org.example.online_products_shop.exception.DistrictNotFoundException;
 import org.example.online_products_shop.repository.DistrictRepository;

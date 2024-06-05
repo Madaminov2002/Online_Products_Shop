@@ -1,4 +1,4 @@
-package org.example.online_products_shop.dto;
+package org.example.online_products_shop.exception;
 
 public class AdminNotFoundException extends RuntimeException {
     public AdminNotFoundException(Long adminId) {
